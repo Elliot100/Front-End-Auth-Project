@@ -33,6 +33,8 @@ gem 'jquery-rails'
 
 gem 'mimemagic', github: 'mimemagicrb/mimemagic', ref: '01f92d86d15d85cfd0f20dabd025dcbd36a8a60f'
 
+gem 'bootsnap', require: false
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
