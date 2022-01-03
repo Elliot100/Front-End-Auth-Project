@@ -19,11 +19,11 @@ class SignUp extends React.Component {
     };
   }
 
-  handleSubmit(e) {
+ handleSubmit(e) {
     // redirect after sucessfully create user
     e.preventDefault();
     this.props.createNewUser(this.state)
-      .then(() => this.props.history.push('/chirps'));
+      .then(() => this.props.history.push('/chirps'))
   }
 
   render () {
@@ -45,7 +45,7 @@ class SignUp extends React.Component {
               onChange={this.handleInput("email")} />
           </label>
           <br />
-          <label>username: 
+          <label>password: 
           <input 
             type="password" 
             value={this.state.password} 
