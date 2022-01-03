@@ -10,6 +10,14 @@ class SignUp extends React.Component {
     }
   }
 
+  handleChange(type) {
+    this.setState({ [type]: this.target.valule });
+  }
+
+  handleSubmit(e) {
+    e.prevenDefault();
+    this.props.createNewUser(this.state);
+  }
 
   render () {
     return (
