@@ -9,15 +9,21 @@ class SignUp extends React.Component {
       password: ''
     };
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleInput = this.handleInput.bind(this);
   }
 
-  handleChange(type) {
-    this.setState({ [type]: this.target.value });
+  handleInput(type) {
+    //returning a callback because function being invoked in render()
+    return (e) => {
+      this.setState({ [type]: e.target.value });
+    };
   }
 
   handleSubmit(e) {
-    e.prevenDefault();
-    this.props.createNewUser(this.state);
+    // redirect after sucessfully create user
+    e.preventDefault();
+    this.props.createNewUser(this.state)
+      .then(() => this.props.history.push('/chirps'));
   }
 
   render () {
@@ -29,21 +35,21 @@ class SignUp extends React.Component {
             <input 
               type="text" 
               value={this.state.username} 
-              onChange={this.handleChange("username")} />
+              onChange={this.handleInput("username")} />
           </label>
           <br />
           <label>email:
             <input 
               type="text" 
               value={this.state.email} 
-              onChange={this.handleChange("email")} />
+              onChange={this.handleInput("email")} />
           </label>
           <br />
           <label>username: 
           <input 
             type="password" 
             value={this.state.password} 
-            onChange={this.handleChange("password")} />
+            onChange={this.handleInput("password")} />
           </label>  
           <br />
 
