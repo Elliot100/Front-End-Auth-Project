@@ -1,5 +1,6 @@
 import React from 'react';
 
+// eslint-disable-next-line react/display-name
 export default ({ chirp, likeChirp, unLikeChirp }) => {
   let likeButtonText = "You don't like this.";
   let likeButtonAction = () => likeChirp(chirp.id);

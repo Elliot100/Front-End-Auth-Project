@@ -460,6 +460,7 @@ var _react2 = _interopRequireDefault(_react);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+// eslint-disable-next-line react/display-name
 exports.default = function (_ref) {
   var chirp = _ref.chirp,
       likeChirp = _ref.likeChirp,
