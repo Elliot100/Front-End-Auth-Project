@@ -295,6 +295,7 @@ var _route_utils = __webpack_require__(/*! ../utils/route_utils */ "./frontend/u
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+// eslint-disable-next-line react/display-name
 exports.default = function () {
   return _react2.default.createElement(
     'div',

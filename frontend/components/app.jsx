@@ -7,6 +7,7 @@ import Home from './home/home';
 import { Route } from 'react-router-dom';
 import { AuthRoute, ProtectedRoute } from '../utils/route_utils'
 
+// eslint-disable-next-line react/display-name
 export default () => (
   <div>
     <Route path="/" component={NavBarContainer} />
