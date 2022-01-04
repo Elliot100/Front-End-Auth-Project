@@ -847,8 +847,18 @@ var Login = function (_React$Component) {
       var _this2 = this;
 
       return function (e) {
-        return _this2.setState(_defineProperty({}, type, e.target.value));
+        _this2.setState(_defineProperty({}, type, e.target.value));
       };
+    }
+  }, {
+    key: 'handleSubmit',
+    value: function handleSubmit(e) {
+      var _this3 = this;
+
+      e.preventDefault();
+      this.props.login(this.state).then(function () {
+        return _this3.props.history.push("/chirps");
+      });
     }
   }, {
     key: 'render',
@@ -879,11 +889,16 @@ var Login = function (_React$Component) {
             null,
             'password:',
             _react2.default.createElement('input', {
-              type: 'text',
-              value: this.username,
-              onChange: this.handleInput("username") })
+              type: 'password',
+              value: this.password,
+              onChange: this.handleInput("password") })
           ),
-          _react2.default.createElement('br', null)
+          _react2.default.createElement('br', null),
+          _react2.default.createElement(
+            'button',
+            { onClick: this.handleSubmit },
+            'log in'
+          )
         )
       );
     }
